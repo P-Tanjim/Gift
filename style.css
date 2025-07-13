@@ -10,7 +10,6 @@
 }
 
 body {
-  transform: scale(1.5);
   background-color: #ffc9df;
   font-family: "Inter", sans-serif;
   overflow: hidden;
@@ -24,6 +23,7 @@ body {
   align-items: center;
   flex-direction: column;
   position: relative;
+  transform: scale(1.5);
 }
 
 /* ----------------------
