@@ -1,0 +1,353 @@
+@font-face {
+  font-family: "gift";
+  src: url("gift.ttf") format("truetype");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #ffc9df;
+  font-family: "Inter", sans-serif;
+  overflow: hidden;
+}
+
+.container {
+  height: 100dvh;
+  width: 100dvw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+
+/* ----------------------
+   GIFT BOX
+----------------------- */
+
+.gift-box {
+  position: absolute;
+  width: clamp(150px, 25vw, 300px);
+  height: clamp(150px, 25vw, 300px);
+  background-color: #8accd5;
+  animation: float 1s ease-in-out infinite;
+  text-align: center;
+  z-index: 3;
+  cursor: pointer;
+}
+
+.gift-box h2 {
+  font-family: "gift";
+  font-size: clamp(3rem, 6vw, 6rem);
+  color: #8e7dbe;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+.ribbon-one {
+  height: 100%;
+  width: clamp(10px, 4vw, 20px);
+  background-color: #ff90bb;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.ribbon-two {
+  height: clamp(10px, 4vh, 20px);
+  width: 100%;
+  background-color: #ff90bb;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* ----------------------
+   LID
+----------------------- */
+
+.lid {
+  position: absolute;
+  width: clamp(150px, 25vw, 300px);
+  animation: float-lid 1s ease-in-out infinite;
+  z-index: 4;
+}
+
+.lid-box {
+  position: absolute;
+  width: 100%;
+  transform: scale(1.2);
+  height: clamp(40px, 8vh, 60px);
+  background-color: #8accd5;
+  z-index: 1;
+  margin-top: -50%;
+}
+
+.lid-shadow {
+  position: absolute;
+  width: 100%;
+  height: clamp(40px, 8vh, 60px);
+  z-index: 1;
+  margin-top: -50%;
+  box-shadow: 0 15px 0 rgba(0, 0, 0, 0.2);
+}
+
+.ribbon {
+  width: clamp(10px, 4vw, 20px);
+  height: 100%;
+  background-color: #ff90bb;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.triangle-left,
+.triangle-right {
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: 0;
+  margin-top: -70%;
+}
+
+.triangle-left {
+  left: 40%;
+  border-left: 0 solid transparent;
+  border-right: 50px solid transparent;
+  border-bottom: 60px solid #ff90bb;
+}
+
+.triangle-right {
+  right: 40%;
+  border-left: 50px solid transparent;
+  border-right: 0 solid transparent;
+  border-bottom: 60px solid #ff90bb;
+}
+
+/* ----------------------
+   ANIMATIONS
+----------------------- */
+
+@keyframes float {
+  0% {
+    margin-top: 0vh;
+  }
+  50% {
+    margin-top: 1.8vh;
+  }
+  100% {
+    margin-top: 0vh;
+  }
+}
+
+@keyframes float-lid {
+  0% {
+    margin-top: 0vh;
+  }
+  50% {
+    margin-top: 2vh;
+  }
+  100% {
+    margin-top: 0vh;
+  }
+}
+
+.open {
+  animation: open-lid 1s linear 1 forwards;
+}
+
+@keyframes open-lid {
+  0% {
+    top: 50%;
+    left: 38%;
+    transform: rotate(0deg);
+  }
+  50% {
+    top: 15%;
+    left: 15%;
+    transform: rotate(-180deg);
+  }
+  100% {
+    top: 2%;
+    left: -50%;
+    transform: rotate(-250deg);
+  }
+}
+
+.down-box {
+  animation: down-box 1s linear 1 forwards;
+}
+
+@keyframes down-box {
+  0% {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  100% {
+    top: 110%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+/* ----------------------
+   ENVELOPE
+----------------------- */
+
+.container-envelop {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: grid;
+  place-items: center;
+  z-index: 2;
+}
+
+.envelope-wrapper {
+  background: var(--bg-envelope-color, #fae3c6);
+  transform: scale(0.5);
+}
+
+.envelope {
+  position: relative;
+  width: 300px;
+  height: 230px;
+}
+
+.envelope::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  z-index: 2;
+  border-top: 130px solid var(--envelope-tab, #ffd9ab);
+  border-right: 150px solid transparent;
+  border-left: 150px solid transparent;
+  transform-origin: top;
+  transition: all 0.5s ease-in-out 0.7s;
+}
+
+.envelope::after {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  width: 0px;
+  height: 0px;
+  border-top: 130px solid transparent;
+  border-right: 150px solid var(--envelope-cover, #fae3c6);
+  border-bottom: 100px solid var(--envelope-cover, #fae3c6);
+  border-left: 150px solid var(--envelope-cover, #fae3c6);
+}
+
+.letter {
+  position: absolute;
+  right: 20%;
+  bottom: 0;
+  width: 54%;
+  height: 80%;
+  background: var(--primary, #ffe6e6);
+  text-align: center;
+  transition: all 1s ease-in-out;
+  padding: 20px 10px;
+}
+
+.letter .text {
+  color: var(--txt-color, #732222);
+  text-align: center;
+  font-size: 8px;
+  font-family: 'gift';
+}
+
+.text strong{
+    font-family: 'Great Vibes';
+    font-size: 15px;
+}
+
+.heart {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 15px;
+  height: 15px;
+  background: var(--heart-color, red);
+  z-index: 4;
+  transform: translate(-50%, -20%) rotate(45deg);
+  transition: transform 0.5s ease-in-out 1s;
+  box-shadow: 0 1px 6px var(--shadow-color, #555);
+  cursor: pointer;
+}
+
+.heart::before,
+.heart::after {
+  content: "";
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background-color: var(--heart-color, red);
+  border-radius: 50%;
+}
+.heart::before {
+  top: -7.5px;
+}
+.heart::after {
+  right: 7.5px;
+}
+
+/* flap open styles (FIXED SELECTORS) */
+.flap .envelope::before {
+  transform: rotateX(180deg);
+  z-index: 0;
+}
+
+.flap .envelope .letter {
+  bottom: 100px;
+  transform: scale(1.5);
+  transition-delay: 1s;
+}
+
+.flap .heart {
+  transform: rotate(90deg);
+  transition-delay: 0.4s;
+}
+
+/* Envelope floating animation */
+@keyframes envelope-move {
+    0%{
+        transform: scale(0.5);
+    }
+    50%{
+        transform: scale(1.2);
+    }
+    100%{
+        transform: scale(1.2);
+    }
+}
+
+.envelope-float {
+  animation: envelope-move 2s ease-out forwards,
+    float 1s ease-in-out infinite 2s;
+}
+
+/* ----------------------
+   RESPONSIVE
+----------------------- */
+@media (max-width: 600px) {
+  .gift-box h2 {
+    font-size: 1.8rem;
+  }
+
+  .triangle-left,
+  .triangle-right {
+    border-bottom-width: 20px;
+    border-right-width: 20px;
+    border-left-width: 20px;
+  }
+}
