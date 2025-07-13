@@ -332,8 +332,7 @@ body {
 }
 
 .envelope-float {
-  animation: envelope-move 2s ease-out forwards,
-    float 1s ease-in-out infinite 2s;
+  animation: envelope-move 2s ease-out forwards;
 }
 
 /* ----------------------
