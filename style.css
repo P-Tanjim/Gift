@@ -10,6 +10,7 @@
 }
 
 body {
+  transform: scale(1.5);
   background-color: #ffc9df;
   font-family: "Inter", sans-serif;
   overflow: hidden;
