@@ -23,7 +23,7 @@ body {
   align-items: center;
   flex-direction: column;
   position: relative;
-  transform: scale(1.5);
+  
 }
 
 /* ----------------------
@@ -39,6 +39,7 @@ body {
   text-align: center;
   z-index: 3;
   cursor: pointer;
+  transform: scale(1.5);
 }
 
 .gift-box h2 {
@@ -48,7 +49,7 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scale(1.2);
   z-index: 2;
 }
 
@@ -58,7 +59,7 @@ body {
   background-color: #ff90bb;
   position: absolute;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translate(-50%, -50%) scale(1.2);
 }
 
 .ribbon-two {
@@ -67,7 +68,7 @@ body {
   background-color: #ff90bb;
   position: absolute;
   top: 50%;
-  transform: translateY(-50%);
+  transform: translate(-50%, -50%) scale(1.2);
 }
 
 /* ----------------------
@@ -79,12 +80,13 @@ body {
   width: clamp(150px, 25vw, 300px);
   animation: float-lid 1s ease-in-out infinite;
   z-index: 4;
+  transform: scale(1.5);
 }
 
 .lid-box {
   position: absolute;
   width: 100%;
-  transform: scale(1.2);
+  transform: scale(1.7);
   height: clamp(40px, 8vh, 60px);
   background-color: #8accd5;
   z-index: 1;
@@ -98,6 +100,7 @@ body {
   z-index: 1;
   margin-top: -50%;
   box-shadow: 0 15px 0 rgba(0, 0, 0, 0.2);
+  transform: scale(1.5);
 }
 
 .ribbon {
@@ -116,6 +119,7 @@ body {
   position: absolute;
   top: 0;
   margin-top: -70%;
+  transform: scale(1.5);
 }
 
 .triangle-left {
