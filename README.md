@@ -18,7 +18,8 @@ Welcome to the **Animated Gift Box Surprise** — an interactive and heartwarmin
 - 🎨 Beautiful pastel color palette with clean typography
 
 ---
-
+> [!IMPORTANT]
+> This is for just mobile
 
 ## 🛠️ Tech Stack
 
